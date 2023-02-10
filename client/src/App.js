@@ -8,6 +8,7 @@ import LandingPage from "./pages/LandingPage";
 import AppCSS from "./assets/App.module.css";
 import blueShape from "./assets/blueShape.png";
 import "./assets/index.css";
+import TutorStatistics from "./features/tutorStatistics/TutorStatistics";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/" element={<LandingPage />} />
           <Route path="/tutors/:skill" element={<FilterTutors />} />
           <Route path="/addTutor" element={<NewTutorForm />} />
+          <Route path="/statistics" element={<TutorStatistics />} />
         </Routes>
         <Footer />
       </div>
