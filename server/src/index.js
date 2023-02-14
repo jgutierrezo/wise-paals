@@ -2,6 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import tutorRoutes from "./v1/routes/tutorRoutes.js";
+import reviewRoutes from "./v1/routes/reviewRoutes.js";
 import connectDb from "./database/MongoDbConfig.js";
 import dotenv from "dotenv";
 import authenticationRoutes from "./v1/routes/authenticationRoutes.js";
@@ -52,3 +53,4 @@ app.use("/api/v1/generate-random-tutors", populateDBRoutes);
 app.use("/api/v1/auth", authenticationRoutes);
 //Home routes
 app.use("/api/v1/contents", homeRoutes);
+app.use("/api/v1/reviews", reviewRoutes);
