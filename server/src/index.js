@@ -6,6 +6,7 @@ import connectDb from "./database/MongoDbConfig.js";
 import dotenv from "dotenv";
 import authenticationRoutes from "./v1/routes/authenticationRoutes.js";
 import populateDBRoutes from "./v1/routes/populateDBRoutes.js";
+import homeRoutes from "./v1/routes/homeRoutes.js";
 import cookieParser from "cookie-parser";
 import corsOptions from "./config/corsOptions.js";
 import credentials from "./middlewares/credentials.js";
@@ -49,3 +50,5 @@ app.use("/api/v1/tutors", tutorRoutes);
 app.use("/api/v1/generate-random-tutors", populateDBRoutes);
 //Authentication routes
 app.use("/api/v1/auth", authenticationRoutes);
+//Home routes
+app.use("/api/v1/contents", homeRoutes);
