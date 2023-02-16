@@ -2,11 +2,13 @@ import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import tutorRoutes from "./v1/routes/tutorRoutes.js";
+import reviewRoutes from "./v1/routes/reviewRoutes.js";
 import contactFomrRoutes from "./v1/routes/contactFormRoutes.js";
 import connectDb from "./database/MongoDbConfig.js";
 import dotenv from "dotenv";
 import authenticationRoutes from "./v1/routes/authenticationRoutes.js";
 import populateDBRoutes from "./v1/routes/populateDBRoutes.js";
+import homeRoutes from "./v1/routes/homeRoutes.js";
 import cookieParser from "cookie-parser";
 import corsOptions from "./config/corsOptions.js";
 import credentials from "./middlewares/credentials.js";
@@ -50,5 +52,8 @@ app.use("/api/v1/tutors", tutorRoutes);
 app.use("/api/v1/generate-random-tutors", populateDBRoutes);
 //Authentication routes
 app.use("/api/v1/auth", authenticationRoutes);
+//Home routes
+app.use("/api/v1/contents", homeRoutes);
+app.use("/api/v1/reviews", reviewRoutes);
 //ContactForm routes
 app.use("/api/v1/contact", contactFomrRoutes);
