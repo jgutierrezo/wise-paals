@@ -9,6 +9,7 @@ import LandingPage from "./pages/LandingPage.tsx";
 import AppCSS from "./assets/App.module.css";
 import blueShape from "./assets/blueShape.png";
 import "./assets/index.css";
+import ContactTutor from "./pages/ContactTutor.tsx";
 
 interface Props {}
 
@@ -24,6 +25,7 @@ const App: React.FC<Props> = () => {
           <Route path="/tutors/:skill" element={<FilterTutors />} />
           <Route path="/addTutor" element={<NewTutorForm />} />
           <Route path="/statistics" element={<TutorStatistics />} />
+          <Route path="/contactTutor/:tutor" element={<ContactTutor />} />
         </Routes>
         <Footer />
       </div>
